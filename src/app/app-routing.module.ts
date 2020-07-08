@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
 import {DictionaryDetailsComponent} from './dictionary-details/dictionary-details.component';
+import {AuthGuard} from './auth.guard';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: ':key',
-        component:  DictionaryDetailsComponent
+        component:  DictionaryDetailsComponent,
+        canActivate: [AuthGuard]
       }
     ]
   }
@@ -22,5 +24,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
+
 }
