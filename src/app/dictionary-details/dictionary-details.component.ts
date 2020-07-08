@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IWord} from '../iword';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {DictionaryService} from '../dictionary.service';
@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './dictionary-details.component.html',
   styleUrls: ['./dictionary-details.component.css']
 })
-export class DictionaryDetailsComponent implements OnInit {
+export class DictionaryDetailsComponent implements OnInit, OnDestroy {
 
   word: IWord;
   sub: Subscription;
