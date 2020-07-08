@@ -12,6 +12,9 @@ export class DictionaryService {
     {key: 'efficient', meaning: 'hiệu quả'},
     {key: 'snow', meaning: 'tuyết'}
   ];
+  getAll(): IWord[] {
+    return this.words;
+  }
 
   search(word: string): string {
     if (!word) {
